@@ -1,0 +1,15 @@
+[submodule "bnt"]
+	path = bnt
+	url = https://github.com/baseboxorg/contracts
+[submodule "app/bnt"]
+	path = app/bnt
+	url = https://github.com/baseboxorg/contracts
+[submodule "app/zep"]
+	path = app/zep
+	url = https://github.com/baseboxorg/openzeppelin-solidity
+[submodule "app/ieo"]
+	path = app/ieo
+	url = https://github.com/baseboxorg/ieo-smart-contracts.git
+[submodule "app/knc"]
+	path = app/knc
+	url = https://github.com/baseboxorg/smart-contracts.git
