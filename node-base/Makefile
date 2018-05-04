@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------------
 
 # name of container
-IMAGE_NAME = baseboxorg/node-base:8
+IMAGE_NAME = baseboxorg/node-base:10
 
 #-----------------------------------------------------------------------------
 # default target

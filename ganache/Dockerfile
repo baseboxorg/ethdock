@@ -1,4 +1,4 @@
-FROM baseboxorg/node-base:8
+FROM baseboxorg/node-base:10
 
 MAINTAINER BaseBoxOrg <baseboxorg@outlook.com>
 

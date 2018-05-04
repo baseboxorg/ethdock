@@ -5,6 +5,7 @@ services:
     workspace:
         build:
             context: ./workspace
+        image: baseboxorg/ethdock-workspace
         volumes_from:
             - volumes_source
         # if you want to start blockchain container automatically
@@ -28,6 +29,7 @@ services:
     testrpc:
         build:
             context: ./testrpc
+        image: baseboxorg/ethdock-testrpc
         volumes_from:
             - volumes_source
         # if you want to connect from host
@@ -43,6 +45,7 @@ services:
     geth:
         build:
             context: ./geth
+        image: baseboxorg/ethdock-geth
         volumes_from:
             - volumes_data
         # if you want to connect from host
@@ -69,6 +72,7 @@ services:
     ganache:
         build:
             context: ./ganache
+        image: baseboxorg/ethdock-ganache
         volumes_from:
             - volumes_source
         # if you want to connect from host
