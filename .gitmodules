@@ -13,3 +13,6 @@
 [submodule "app/knc"]
 	path = app/knc
 	url = https://github.com/baseboxorg/smart-contracts.git
+[submodule "app/voo"]
+	path = app/voo
+	url = https://github.com/baseboxorg/voo-smart-contracts.git
