@@ -1,6 +1,6 @@
-FROM node:7.10.1-wheezy
+FROM baseboxorg/node-base:8
 
-MAINTAINER Peter Lai <alk03073135@gmail.com>
+MAINTAINER BaseBoxOrg <baseboxorg@outlook.com>
 
 RUN npm install -g ganache-cli
 

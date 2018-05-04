@@ -1,8 +1,7 @@
-FROM node:8-alpine
+FROM baseboxorg/node-base:8
+MAINTAINER BaseBoxOrg <baseboxorg@outlook.com>
 
-RUN apk add -t .gyp --no-cache make git bash boost-dev
-
-RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+RUN apk -q --no-cache add boost-dev g++
 
 # install truffle
 RUN npm install -g truffle
@@ -18,6 +17,5 @@ RUN cd ~ && \
 
 # Clean up
 USER root
-RUN apk del .gyp
 # Set default work directory
 WORKDIR /usr/share/app

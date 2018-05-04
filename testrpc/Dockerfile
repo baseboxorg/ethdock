@@ -1,7 +1,7 @@
-FROM node:7.10.1-wheezy
+FROM baseboxorg/node-base:8
 
-MAINTAINER Peter Lai <alk03073135@gmail.com>
+MAINTAINER BaseBoxOrg <baseboxorg@outlook.com>
 
-RUN npm install -g ethereumjs-testrpc@4.0.0
+RUN npm install -g ethereumjs-testrpc
 
 CMD testrpc --hostname=0.0.0.0 $TESTRPC_OPTS

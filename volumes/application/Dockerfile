@@ -1,6 +1,6 @@
-FROM debian:wheezy
+FROM baseboxorg/alpine-base:3.7
 
-MAINTAINER Peter Lai <alk03073135@gmail.com>
+MAINTAINER BaseBoxOrg <baseboxorg@outlook.com>
 
 WORKDIR /usr/share/app
 
