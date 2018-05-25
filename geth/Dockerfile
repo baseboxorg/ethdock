@@ -3,7 +3,10 @@ FROM golang:1.10-alpine as builder
 
 MAINTAINER BaseBoxOrg <baseboxorg@outlook.com>
 
-RUN apk -q --no-cache add make gcc musl-dev linux-headers git
+RUN apk -q --no-cache add ca-certificates bash nano make gcc musl-dev linux-headers git && \
+    update-ca-certificates
+
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 # build geth
 RUN git clone https://github.com/ethereum/go-ethereum /go-ethereum && \
@@ -12,9 +15,14 @@ RUN git clone https://github.com/ethereum/go-ethereum /go-ethereum && \
 
 
 # Pull Geth into a second stage deploy alpine container
-FROM baseboxorg/alpine-base:3.7
+FROM alpine:3.7
 
 MAINTAINER BaseBoxOrg <baseboxorg@outlook.com>
+
+RUN apk -q --no-cache add ca-certificates bash nano && \
+    update-ca-certificates
+
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 ADD genesis.json /
 

@@ -1,7 +1,10 @@
-FROM baseboxorg/alpine-base:3.7 as builder
+FROM alpine:3.7 as builder
 MAINTAINER BaseBoxOrg <baseboxorg@outlook.com>
 
-RUN apk -q --no-cache add build-base git boost-dev g++
+RUN apk -q --no-cache add ca-certificates bash nano build-base git boost-dev g++ && \
+    update-ca-certificates
+
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 # install install porosity
 RUN cd ~ && \
@@ -10,11 +13,15 @@ RUN cd ~ && \
     make
 
 
-FROM baseboxorg/node-base
+FROM node:8-alpine
 
 MAINTAINER BaseBoxOrg <baseboxorg@outlook.com>
 
-RUN apk -q --no-cache add make git python3 g++
+RUN apk -q --no-cache add ca-certificates bash nano make git python3 g++ && \
+    update-ca-certificates
+
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+
 # install truffle
 RUN npm install -g truffle
 
