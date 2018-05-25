@@ -10,11 +10,11 @@ RUN cd ~ && \
     make
 
 
-FROM baseboxorg/node-base:10
+FROM baseboxorg/node-base
 
 MAINTAINER BaseBoxOrg <baseboxorg@outlook.com>
 
-RUN apk -q --no-cache add git
+RUN apk -q --no-cache add make git python3 g++
 # install truffle
 RUN npm install -g truffle
 
